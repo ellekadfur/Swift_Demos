@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="1IT-Wi-NEt">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--MapVC-->
+        <scene sceneID="hSM-8o-FDt">
+            <objects>
+                <viewController storyboardIdentifier="MapVC" id="f4s-Zf-FKB" customClass="MapVC" customModule="MovieList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XmX-o9-mga">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WRZ-cV-YXI">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Px8-jg-YqU">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                    </mapView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Px8-jg-YqU" firstAttribute="leading" secondItem="WRZ-cV-YXI" secondAttribute="leading" id="JEp-cw-qYa"/>
+                                    <constraint firstAttribute="trailing" secondItem="Px8-jg-YqU" secondAttribute="trailing" id="RJb-9F-tGx"/>
+                                    <constraint firstItem="Px8-jg-YqU" firstAttribute="top" secondItem="WRZ-cV-YXI" secondAttribute="top" id="aSI-es-mfX"/>
+                                    <constraint firstAttribute="bottom" secondItem="Px8-jg-YqU" secondAttribute="bottom" id="kaQ-Yv-x5E"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fsA-bB-5IM" firstAttribute="bottom" secondItem="WRZ-cV-YXI" secondAttribute="bottom" id="5ms-y1-E3r"/>
+                            <constraint firstItem="fsA-bB-5IM" firstAttribute="trailing" secondItem="WRZ-cV-YXI" secondAttribute="trailing" id="Udb-lh-WwW"/>
+                            <constraint firstItem="WRZ-cV-YXI" firstAttribute="leading" secondItem="fsA-bB-5IM" secondAttribute="leading" id="cZT-Vp-RWt"/>
+                            <constraint firstItem="WRZ-cV-YXI" firstAttribute="top" secondItem="fsA-bB-5IM" secondAttribute="top" id="yj2-aB-s4Z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fsA-bB-5IM"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IdA-61-Gp0">
+                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="76k-W1-PYQ">
+                            <connections>
+                                <action selector="onTouchExit:" destination="f4s-Zf-FKB" id="Cww-Pz-l5J"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="Px8-jg-YqU" id="mBq-0q-0PL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WKK-e4-OPx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="420" y="17.541229385307346"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="E3U-Kp-Tam">
+            <objects>
+                <navigationController storyboardIdentifier="MapVCNav" automaticallyAdjustsScrollViewInsets="NO" id="1IT-Wi-NEt" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eVt-cl-1ai">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="f4s-Zf-FKB" kind="relationship" relationship="rootViewController" id="h3I-VC-IRV"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VGi-VG-WWc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-303" y="18"/>
+        </scene>
+    </scenes>
+</document>

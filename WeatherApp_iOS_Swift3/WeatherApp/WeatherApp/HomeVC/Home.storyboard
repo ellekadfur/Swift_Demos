@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Title-->
+        <scene sceneID="Vcg-he-hih">
+            <objects>
+                <viewController storyboardIdentifier="HomeVC" id="j2O-5m-OEG" customClass="HomeVC" customModule="WeatherApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Smb-Ot-U4Y">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="NlA-R2-iyc">
+                                <rect key="frame" x="177.5" y="224" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cru-sy-Xes">
+                                <rect key="frame" x="0.0" y="234" width="375" height="200"/>
+                                <subviews>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dcm-M6-eMH">
+                                        <rect key="frame" x="0.0" y="-234" width="375" height="0.0"/>
+                                        <state key="normal" title="Refresh"/>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIY-6v-Psa">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="1Sw-fp-yCI"/>
+                                </constraints>
+                            </stackView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6U3-iv-by1">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="j2O-5m-OEG" id="aqp-LM-dWU"/>
+                                    <outlet property="delegate" destination="j2O-5m-OEG" id="xLp-14-KPm"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="P56-Yo-Eau" firstAttribute="trailing" secondItem="6U3-iv-by1" secondAttribute="trailing" id="IfM-9j-zce"/>
+                            <constraint firstItem="NlA-R2-iyc" firstAttribute="centerX" secondItem="Smb-Ot-U4Y" secondAttribute="centerX" id="TUx-k8-b7v"/>
+                            <constraint firstItem="cru-sy-Xes" firstAttribute="centerY" secondItem="Smb-Ot-U4Y" secondAttribute="centerY" id="Wse-W3-Cp5"/>
+                            <constraint firstItem="cru-sy-Xes" firstAttribute="leading" secondItem="P56-Yo-Eau" secondAttribute="leading" id="YGM-1P-e1Y"/>
+                            <constraint firstItem="NlA-R2-iyc" firstAttribute="bottom" secondItem="cru-sy-Xes" secondAttribute="top" constant="10" id="aao-vB-Rb6"/>
+                            <constraint firstItem="6U3-iv-by1" firstAttribute="top" secondItem="P56-Yo-Eau" secondAttribute="top" id="dmp-fj-QPn"/>
+                            <constraint firstItem="6U3-iv-by1" firstAttribute="leading" secondItem="Smb-Ot-U4Y" secondAttribute="leading" id="sKd-IQ-X1e"/>
+                            <constraint firstItem="P56-Yo-Eau" firstAttribute="bottom" secondItem="6U3-iv-by1" secondAttribute="bottom" id="tvC-Tz-pQO"/>
+                            <constraint firstItem="cru-sy-Xes" firstAttribute="centerX" secondItem="Smb-Ot-U4Y" secondAttribute="centerX" id="uHE-Ji-Yr6"/>
+                            <constraint firstItem="P56-Yo-Eau" firstAttribute="trailing" secondItem="cru-sy-Xes" secondAttribute="trailing" id="wGb-xH-j1D"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="P56-Yo-Eau"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="WMG-7V-nrf"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="NlA-R2-iyc" id="pMl-hA-3ck"/>
+                        <outlet property="loadingLabel" destination="NIY-6v-Psa" id="5tn-0a-O0A"/>
+                        <outlet property="refreshButton" destination="Dcm-M6-eMH" id="mwy-K3-0Nt"/>
+                        <outlet property="stackView" destination="cru-sy-Xes" id="ZHo-Kd-DLw"/>
+                        <outlet property="tableView" destination="6U3-iv-by1" id="nW7-bx-hzl"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KAT-oa-KTY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="582" y="125"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="f78-R3-5fQ">
+            <objects>
+                <navigationController storyboardIdentifier="HomeVCNav" automaticallyAdjustsScrollViewInsets="NO" id="sUO-mU-gUN" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zsR-9n-3wq">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="j2O-5m-OEG" kind="relationship" relationship="rootViewController" id="5uQ-VB-18p"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rwC-H1-zUv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-134.40000000000001" y="125.93703148425789"/>
+        </scene>
+    </scenes>
+</document>

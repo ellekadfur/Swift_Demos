@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="WeatherCellIdentifier" rowHeight="287" id="KGk-i7-Jjw" customClass="WeatherCell" customModule="WeatherApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="287"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="286.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5iT-uA-vab" userLabel="dayOfWeek">
+                        <rect key="frame" x="16" y="11" width="116.5" height="265"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vpd-Zy-qbo" userLabel="tempatureLabel">
+                        <rect key="frame" x="187" y="11" width="116.5" height="265"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fv9-0x-3fL">
+                        <rect key="frame" x="142.5" y="126" width="35" height="35"/>
+                        <color key="backgroundColor" red="0.6705882353" green="0.70588235290000001" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="6fv-ge-ed8"/>
+                            <constraint firstAttribute="height" constant="35" id="7tT-9n-CFe"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="5iT-uA-vab" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="50F-9i-vn4"/>
+                    <constraint firstItem="Fv9-0x-3fL" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Gt3-VY-HMD"/>
+                    <constraint firstItem="vpd-Zy-qbo" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="JZR-Y4-mLi"/>
+                    <constraint firstItem="5iT-uA-vab" firstAttribute="trailing" secondItem="Fv9-0x-3fL" secondAttribute="leading" constant="-10" id="Kr7-Rl-WAb"/>
+                    <constraint firstItem="vpd-Zy-qbo" firstAttribute="leading" secondItem="Fv9-0x-3fL" secondAttribute="trailing" constant="10" id="N8d-dp-aTY"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="vpd-Zy-qbo" secondAttribute="bottom" id="TJ3-L1-aDi"/>
+                    <constraint firstItem="Fv9-0x-3fL" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="bEg-X3-AqS"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="vpd-Zy-qbo" secondAttribute="trailing" id="sco-sI-mdP"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="5iT-uA-vab" secondAttribute="bottom" id="v4S-jp-xhq"/>
+                    <constraint firstItem="5iT-uA-vab" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="xi1-4P-nIF"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="dayOfWeek" destination="5iT-uA-vab" id="8D8-QW-zhA"/>
+                <outlet property="imageViewWeather" destination="Fv9-0x-3fL" id="GJu-W6-jvU"/>
+                <outlet property="tempatureLabel" destination="vpd-Zy-qbo" id="WdK-hS-M8s"/>
+            </connections>
+            <point key="canvasLocation" x="34" y="-24.5"/>
+        </tableViewCell>
+    </objects>
+</document>
